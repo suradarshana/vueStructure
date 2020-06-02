@@ -4,7 +4,9 @@
 			<router-link to="/"><p class="app-link">HOME</p></router-link>
 		</div>
 		<div>
-			<router-link to="/dashboard/menu2"><p class="app-link">info</p></router-link>
+			<router-link to="/dashboard/menu2"
+				><p class="app-link">info</p></router-link
+			>
 		</div>
 		<div @click="counter">{{ name }}</div>
 		<!-- <button @click="counter">{{ counter }}</button> -->
@@ -31,12 +33,8 @@ export default {
 <style lang="scss" scoped>
 .menu-wrapper {
 	width: 100%;
-	height	:50px;
+	height: 50px;
 	display: flex;
 	align-items: center;
-
-
-
-
 }
 </style>
