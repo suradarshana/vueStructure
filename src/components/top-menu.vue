@@ -1,40 +1,70 @@
 <template>
-	<div class="menu-wrapper">
-		<div>
-			<router-link to="/"><p class="app-link">HOME</p></router-link>
-		</div>
-		<div>
-			<router-link to="/dashboard/menu2"
-				><p class="app-link">info</p></router-link
-			>
-		</div>
-		<div @click="counter">{{ name }}</div>
-		<!-- <button @click="counter">{{ counter }}</button> -->
-	</div>
+  <div class="topMenuWrapper">
+    <ul class="topMenuWrapper__breadcrumb flex justify-start items-center">
+      <li>
+        <a href="#" class="flex justify-center items-center">
+          <span class="topMenuWrapper__breadcrumb__bulet blue rounded-full block"></span>
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#"  class="flex justify-center items-center">
+          <span class="topMenuWrapper__breadcrumb__bulet red rounded-full block"></span>
+          <i class="fas fa-angle-right"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="text-xs">Endowmwnts Management</a>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script>
-export default {
-	data: function() {
-		return {
-			name: "aravinda",
-			counter: this.countFunc,
-		};
-	},
-
-	methods: {
-		countFunc() {
-			alert("count func called");
-		},
-	},
-};
-</script>
-
 <style lang="scss" scoped>
-.menu-wrapper {
-	width: 100%;
-	height: 50px;
-	display: flex;
-	align-items: center;
+.topMenuWrapper {
+  width: calc(100% - 0.5rem);
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 1rem;
+
+  &__breadcrumb {
+    .blue{
+      background: #1c6efc;
+    }
+    .red{
+      background: #e1b4b4;
+    }
+    &__bulet {
+      width: 1rem;
+      height: 1rem;
+      background: #ccc;
+    }
+    li {
+      &:first-child {
+        a {
+          &:before {
+            content: inherit;
+          }
+        }
+      }
+
+      a {
+        margin-right: 10px;
+        color: #59626a;
+
+        span {
+          margin-right: 10px;
+          color: #ccc;
+        }
+        svg {
+          color: #ccc;
+        }
+
+        &:before {
+          //content: "/f105";
+          //color: #f00;
+        }
+      }
+    }
+  }
 }
 </style>

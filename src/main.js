@@ -3,18 +3,35 @@
 // relative plugins
 import Vue from "vue";
 import App from "./App.vue";
+import Router from "./routes.js";
 import "./assets/css/tailwind.css";
 
+import {Tabs, Tab} from 'vue-tabs-component';
+ 
+Vue.component('tabs', Tabs);
+Vue.component('tab', Tab);
+
 // import vue router plugin
-import VueRouter from "vue-router";
+
 // saying Vue to use router plugin
-Vue.use(VueRouter);
+
+import animatecss from 'animate.css';
+
+Vue.use(animatecss);
+
 
 // import components for routing
-import LoginLayout from "./components/login/login-component";
-import DashboardLayout from "./components/dashboard-layout";
-import MenuOne from "./components/menu-one.vue";
-import MenuTwo from "./components/menu-two.vue";
+//import LoginLayout from "./components/login/login-component";
+
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
+
+
+
+
+//import { FontAwesomeIcon } from '@vue-fontawesome-icon/vue-fontawesome'
+//import MenuOne from "./components/menu-one.vue";
+//import MenuTwo from "./components/menu-two.vue";
 
 // import maintitle from "./components/maintitle.vue";
 // import HelloWorld from "./components/HelloWorld.vue";
@@ -25,25 +42,16 @@ import MenuTwo from "./components/menu-two.vue";
 Vue.config.productionTip = false;
 
 // Initialise router array
-const routes = [
-	{ path: "/", component: LoginLayout },
-	{
-		path: "/dashboard",
-		component: DashboardLayout,
-		children: [
-			{ path: "/dashboard/menu1", component: MenuOne },
-			{ path: "/dashboard/menu2", component: MenuTwo },
-		],
-	},
-];
+
+
+//Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // inject router array to new VueRouter instance
-const router = new VueRouter({
-	routes,
-});
+
 
 // Vue Compiler
 new Vue({
-	router,
+	//router,
 	render: (h) => h(App),
+	router: Router
 }).$mount("#app");

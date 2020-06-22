@@ -1,77 +1,71 @@
 <template>
-	<div>
-		<div class="menubar">
-			<top-menu></top-menu>
-		</div>
-
-		<div class="middleContainer">
-			<div class="leftMenu">
-				<side-menu></side-menu>
-			</div>
-			<div class="mainContainer">
-				<router-view></router-view>
-			</div>
-		</div>
-		<div @click="objFunc" class="footer">Footer</div>
-	</div>
+  <div class="appLayout">
+    <div class="appLayout__sidebar">
+      <Sidebar></Sidebar>
+    </div>
+    <div class="appLayout__pageHeader">
+      <page-header></page-header>
+    </div>
+    <div class="appLayout__mainContainer">
+      <endowmwntsm></endowmwntsm>
+    </div>
+  </div>
 </template>
 <script>
-import TopMenu from "./top-menu.vue";
-import SideMenu from "./side-menu.vue";
-export default {
-	components: {
-		"top-menu": TopMenu,
-		"side-menu": SideMenu,
-	},
-	data: function() {
-		return {
-			name: "ara",
-			same: "sdfsdff",
-			test: function() {
-				console.log(this.names());
-			},
-		};
-	},
-	methods: {
-		names() {
-			console.log(this.name);
-		},
+/*  */
+import Sidebar from "./sidebar";
+import Header from "./header";
+import endowmwntsManagement from "./endowmwnts-management";
 
-		game() {
-			console.log("game");
-		},
-		objFunc() {
-			console.log(this.test());
-		},
-	},
+export default {
+  components: {
+    Sidebar: Sidebar,
+    "page-header": Header,
+    endowmwntsm : endowmwntsManagement
+  },
+  data: function() {
+    return {};
+  },
+  methods: {}
 };
 </script>
 
 <style lang="scss" scoped>
-.menubar {
-	height: 50px;
-	background-color: orangered;
-}
+.appLayout {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 260px 1fr;
+  height: 100vh;
+  margin: 0;
 
-.middleContainer {
-	display: flex;
-	border: 1px solid green;
-	background-color: pink;
-	height: calc(100vh - 102px);
-}
+  &__sidebar {
+    background: #fff;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
 
-.leftMenu {
-	background-color: blue;
-	flex: 2;
-}
+  &__pageHeader {
+    background: #f5f6f7;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+  }
 
-.mainContainer {
-	background-color: orange;
-	flex: 10;
-}
-
-.footer {
-	height: 50px;
-	background: gray;
+  &__mainContainer {
+    background: #f5f6f7;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    padding: 2rem;
+    padding-top: 0;
+    height: calc(100vh - 80px);
+  }
 }
 </style>
