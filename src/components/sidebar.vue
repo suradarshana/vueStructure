@@ -89,47 +89,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.dwrap1 {
-  z-index: 9999;
-}
-.dwrap2 {
-  z-index: 100;
-}
-.d1 {
-  top: 11px;
-  left: 6px;
-  z-index: 100;
-}
-.d2 {
-  top: 11px;
-  opacity: 0.5;
-  left: 10.5px;
-  z-index: 80;
-}
-.d3 {
-  top: 11px;
-  opacity: 0.2 !important;
-  left: 15px;
-  z-index: 60;
-}
 
-.diamond {
-  width: 30px;
-  height: 30px;
-  background: #2366eb;
-  transform: rotate(44deg);
-  border-radius: 8px;
-
-  span {
-    color: #ffffff;
-    transform: rotate(-44deg);
-    /* padding: 3px; */
-    width: 30px;
-    height: 30px;
-  }
-}
-</style>
 
 <style lang="scss" scoped>
 .sidbarLayout {

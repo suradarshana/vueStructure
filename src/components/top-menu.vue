@@ -8,7 +8,21 @@
         </a>
       </li>
       <li>
-        <a href="#"  class="flex justify-center items-center">
+        <a href="#" class="flex justify-center items-center">
+          <div class="ballanimation">
+            <div class="semicircle upper-base">
+              <div class="semicircle-inner"></div>
+            </div>
+            <div class="semicircle upper-move">
+              <div class="semicircle-inner"></div>
+            </div>
+            <div class="semicircle lower-base">
+              <div class="semicircle-inner"></div>
+            </div>
+            <div class="semicircle lower-move">
+              <div class="semicircle-inner"></div>
+            </div>
+          </div>
           <span class="topMenuWrapper__breadcrumb__bulet red rounded-full block"></span>
           <i class="fas fa-angle-right"></i>
         </a>
@@ -27,15 +41,15 @@
   padding-bottom: 1rem;
 
   &__breadcrumb {
-    .blue{
+    .blue {
       background: #1c6efc;
     }
-    .red{
+    .red {
       background: #e1b4b4;
     }
     &__bulet {
-      width: 1rem;
-      height: 1rem;
+      width: 20px;
+      height: 20px;
       background: #ccc;
     }
     li {
